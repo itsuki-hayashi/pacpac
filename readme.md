@@ -10,7 +10,7 @@ There are 3 mazes to play through. This is thrice as
 many as the original pac-man :)
 
 You need the [löve](http://love2d.org) game engine to play. The current code is written for löve
-v0.9.2.
+v11.5.
 
 The original code was written in under 24 hours as a challenge.
 My wife didn't believe I could make a pac-man-like game in a day.
@@ -18,7 +18,7 @@ Here's a fun [first 24-hour evolution of the game in screenshots](http://tylerne
 
 ## How to install and run
 
-1. Download and install [löve](http://love2d.org). (Current code has been tested with löve v0.9.2.)
+1. Download and install [löve](http://love2d.org). (Current code has been tested with löve v11.5.)
 2. Download and unzip the [zipfile of this repo](https://github.com/tylerneylon/pacpac/archive/master.zip).
 3. Double-click the file `pacpac.love`.
    Alternatively, in OS X and Ubuntu, type `love pacpac.love` from the command line - which assumes
@@ -128,4 +128,4 @@ This game uses the font 8bitoperator created by
 [CC-BY-SA](http://creativecommons.org/licenses/by-sa/2.0/) license.
 
 Thanks to [jonfk](https://github.com/jonfk) for upgrading the code
-for löve v0.9.2.
+for löve v11.5.

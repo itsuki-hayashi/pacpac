@@ -117,10 +117,10 @@ end
 -- This is a workaround for an infrequent but annoying audio bug where clips
 -- simply stop playing and need to be recreated as new objects.
 function PacSource:play()
-  if self.src:isPaused() or self.src:isStopped() then
+  if not self.src:isPlaying() then
     self.src:play()
   end
-  if self.src:isPaused() then
+  if not self.src:isPlaying() then
     -- Here is the workaround. Theoretically, this block should never happen.
     -- But it does.
     local is_looping = self.src:isLooping()
@@ -131,13 +131,13 @@ function PacSource:play()
 end
 
 function PacSource:pause()
-  if not self.src:isPaused() and not self.src:isStopped() then
+  if self.src:isPlaying() then
     self.src:pause()
   end
 end
 
 function PacSource:setLooping(should_loop) self.src:setLooping(should_loop) end
-function PacSource:isPaused() return self.src:isPaused() end
+function PacSource:isPaused() return not self.src:isPlaying() end
 function PacSource:setVolume(volume) self.src:setVolume(volume) end
 function PacSource:stop() self.src:stop() end
 function PacSource:rewind() self.src:rewind() end
@@ -788,7 +788,7 @@ function draw_controls()
 end
 
 function load_hi_score()
-  if not love.filesystem.exists('hi_score') then
+  if love.filesystem.getInfo('hi_score') == nil then
     hi_score = 1000
     return
   end
