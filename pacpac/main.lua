@@ -788,7 +788,7 @@ function draw_controls()
 end
 
 function load_hi_score()
-  if not love.filesystem.exists('hi_score') then
+  if love.filesystem.getInfo('hi_score') == nil then
     hi_score = 1000
     return
   end
